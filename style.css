@@ -31,6 +31,12 @@
         width: 0;
     }
 }
+@keyframes scrolldown {
+    to {
+        transform: translateY(13px);
+        
+    }
+}
     body {
         background-attachment: fixed;
         background-image: linear-gradient(115deg, #000D28 20%,#220164 87%, #36029F 350%);
@@ -57,6 +63,7 @@
 
     .mensagem {
         display: block;
+        position: absolute;
         color: rgba(77, 77, 77, 0.856);
         font-size: 24px;
         font-weight: 700;
@@ -92,6 +99,11 @@
             transform: scale(1.20);
             }
         }
+
+    .down {
+        animation: scrolldown 0.7s ease-in alternate infinite;
+
+    }
 
     .container {
         position: absolute;
