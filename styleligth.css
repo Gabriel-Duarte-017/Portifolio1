@@ -20,6 +20,16 @@
         opacity: 0;
     }
 }
+@keyframes mark {
+    50% {
+        border-right-color: transparent;
+    }
+}
+@keyframes write {
+    0%{
+        width: 0;
+    }
+}
     body {
         background-attachment: fixed;
         background-image: linear-gradient(180deg, #a6aeb6 0%, #838e9b 98%);
@@ -50,6 +60,19 @@
         top: 384px;
         animation-name: id1;
         animation-duration: 2s;
+        }
+
+    .mensagem {
+        display: block;
+        color: rgba(77, 77, 77, 0.856);
+        font-size: 24px;
+        font-weight: 700;
+        border-right: solid rgba(0, 0, 0, 0.855);
+        white-space: nowrap;
+        overflow: hidden;
+        width: 41ch;
+        animation: mark 0.9s infinite;
+        animation: write 2s steps(40, end);
         }
 
     nav {
@@ -83,7 +106,7 @@
         align-items: center;
         transform: translate();
         left: 1750px;
-        top: 74px;
+        top: 81px;
         height: 35px;
         width: 75px;
         background-color: rgba(71, 71, 71, 0.356);
@@ -112,7 +135,7 @@
         align-items: center;
         transform: translate();
         left: 1645px;
-        top: 74px;
+        top: 81px;
         height: 35px;
         width: 75px;
         background-color: rgba(71, 71, 71, 0.356);
