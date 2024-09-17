@@ -34,7 +34,6 @@
 @keyframes scrolldown {
     to {
         transform: translateY(13px);
-        
     }
 }
     body {
@@ -45,9 +44,12 @@
         font-style: normal;
         text-align: left;
         margin: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         }
 
-    .id1 {
+    .board {
         position: absolute;
         background-color: rgb(207, 206, 206, 0.856);
         border-radius: 3px;
@@ -55,7 +57,7 @@
         height: 220px;
         width: 5px;
         transform: translate(50% 50%);
-        left: 230px;
+        left: 265px;
         top: 384px;
         animation-name: id1;
         animation-duration: 2s;
@@ -70,13 +72,13 @@
         border-right: solid rgba(207, 206, 206, 0.856);
         white-space: nowrap;
         overflow: hidden;
-        width: 41ch;
+        width: 44ch;
         animation: mark 0.9s infinite;
         animation: write 2s steps(40, end);
     }
 
     nav {
-        background-color: rgba(71, 71, 71, 0.034); 
+        background-color: rgba(71, 71, 71, 0.356); 
         color: rgb(167, 166, 166);
         height: 277px; 
         width: 15px;
@@ -86,7 +88,7 @@
         border-radius: 100px;
         margin-inline: -20px;
         backdrop-filter: blur(5px);
-        box-shadow: 0px 0px 13px #002e7294;
+        box-shadow: 0px 0px 13px #0f0f0f94;
         left: 70px;
         top: 90px;
         position: absolute;
@@ -102,9 +104,7 @@
 
     .down {
         animation: scrolldown 0.7s ease-in alternate infinite;
-
     }
-
     .container {
         position: absolute;
         display: flex;
@@ -128,10 +128,7 @@
         left: 8px;
         height: 24px;
         width: 24px;
-        animation-duration: 1s;
-        animation-fill-mode: forwards;
-        animation-name: dark;
-
+        animation: dark 1s forwards;
     }
 
     .container1 {
@@ -159,7 +156,95 @@
         width: 24px;
     }
 
-    .picture {
-        width: 300px;
+    .fullskills {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .skills1 {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        left: -250px;
+        top: -950px;
+        width: 200px;
+        height: 300px;
+        border-radius: 25px;
+        backdrop-filter: blur(15px);
+        box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.507);
+        background-color: rgba(71, 71, 71, 0.356);
+        transition: 0.5s;
+    }
+
+    .skills1 .texte1 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 10px;
+        font-size: 15px;
+        overflow: hidden;
+        opacity: 0;
+        transition: 0;
+    }
+
+    .skills1:hover {
+        width: 450px;
+        height: 550px;
+        background-color: #cfceceda;
+        border: 3px solid #FF5722;
+
+    }
+    .skills1:hover .texte1 {
+        opacity: 1;
+    }
+
+    .skills1 .imagemhtml {
+        height: 80px; 
+        margin-top: 20px;
+        position: absolute;
+        transition: 1.3s;
     }
     
+    .skills2 {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        left: 250px;
+        top: -950px;
+        width: 200px;
+        height: 300px;
+        border-radius: 25px;
+        backdrop-filter: blur(15px);
+        box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.507);
+        background-color: rgba(71, 71, 71, 0.356);
+        transition: 0.5s;
+    }
+
+    .skills2 .texte2 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 10px;
+        font-size: 15px;
+        overflow: hidden;
+        opacity: 0;
+        transition: 0s;
+    }
+
+    .skills2:hover .texte2 {
+        opacity: 1;
+    }
+
+    .skills2:hover {
+        width: 450px;
+        height: 550px;
+        background-color: #cfceceda;
+        border: 3px solid #2196F3;
+    }
+
+    .skills2 .imagemcss {
+        height: 80px; 
+        margin-top: 20px; 
+        position: absolute;
+    }
