@@ -23,12 +23,13 @@
 }
 @keyframes mark {
     50% {
-        border-right-color: transparent;
+        border-color: transparent;
     }
 }
 @keyframes write {
-    0%{
+    from{
         width: 0;
+        opacity: 0;
     }
 }
 @keyframes scrolldown {
@@ -36,9 +37,18 @@
         transform: translateY(13px);
     }
 }
+@keyframes scroll {
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
     body {
         background-attachment: fixed;
-        background-image: linear-gradient(115deg, #000D28 20%,#220164 87%, #36029F 350%);
+        background-color: rgb(17, 17, 17);
+    /*  background-image: linear-gradient(115deg, #000D28 20%,#220164 87%, #36029F 350%); */
         font-family: "Chakra Petch", sans-serif;
         font-weight: 300;
         font-style: normal;
@@ -47,18 +57,34 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        }
-
-    .board {
+    }
+    .page1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+    }
+    .head {
+        display: flex;
+        top: 170px;
+        position: absolute;
+        width: 95vw;
+        height: 0px;
+        border-radius: 10px;
+        background-color: rgba(143, 143, 143, 0.116);
+        box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.363);
+    }
+    .line {
         position: absolute;
         background-color: rgb(207, 206, 206, 0.856);
         border-radius: 3px;
         box-shadow: 0px 0px 2px white;
-        height: 220px;
-        width: 5px;
+        height: 210px;
+        width: 3px;
         transform: translate(50% 50%);
-        left: 265px;
-        top: 384px;
+        left: 350px;
+        top: 381px;
         animation-name: id1;
         animation-duration: 2s;
     }
@@ -66,19 +92,16 @@
     .mensagem {
         display: block;
         position: absolute;
-        color: rgba(77, 77, 77, 0.856);
         font-size: 24px;
         font-weight: 700;
-        border-right: solid rgba(207, 206, 206, 0.856);
+        border-right: 3px solid;
         white-space: nowrap;
         overflow: hidden;
         width: 44ch;
-        animation: mark 0.9s infinite;
-        animation: write 2s steps(40, end);
+        animation: write 2s steps(40), mark 0.4s step-end infinite alternate;
     }
 
-    nav {
-        background-color: rgba(71, 71, 71, 0.356); 
+     nav {
         color: rgb(167, 166, 166);
         height: 277px; 
         width: 15px;
@@ -87,23 +110,32 @@
         padding-left: 35px;
         border-radius: 100px;
         margin-inline: -20px;
+        position: absolute;
         backdrop-filter: blur(5px);
-        box-shadow: 0px 0px 13px #0f0f0f94;
+
         left: 70px;
         top: 90px;
-        position: absolute;
         transform: translate(70%, 90%);
         img {
             max-width: 42px;
             transition: 750ms;
             }
         img:hover {
-            transform: scale(1.20);
+            transform: scale(1.40);
             }
         }
 
     .down {
         animation: scrolldown 0.7s ease-in alternate infinite;
+    }
+    .tasks {
+        top: 700px;
+        left: 590px;
+        display: flex;
+        justify-content: center;
+        width: 250px;
+        height: 70px;
+        background-color: #00CF7F;
     }
     .container {
         position: absolute;
@@ -155,11 +187,25 @@
         height: 24px;
         width: 24px;
     }
+    .page2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 98.3vw;
+        height: 100vh;
+    }
+    .habilidades {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
     .fullskills {
         display: flex;
         justify-content: center;
         align-items: center;
+        animation: scroll 1s;
+        animation-timeline: scroll();
     }
 
     .skills1 {

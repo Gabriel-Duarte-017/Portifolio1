@@ -28,11 +28,20 @@
 @keyframes write {
     0%{
         width: 0;
+        opacity: 0;
+    }
+}
+@keyframes scrolldown {
+    to {
+        transform: translateY(13px);
     }
 }
 @keyframes scroll {
-    to {
-        transform: translateY(13px);
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
     }
 }
     body {
@@ -47,17 +56,24 @@
         justify-content: center;
         align-items: center;
         }
+    .page1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+    }
 
-    .board {
+    .line {
         position: absolute;
         background-color: rgba(0, 0, 0, 0.855);
         border-radius: 3px;
         box-shadow: 0px 0px 2px rgb(0, 0, 0);
-        height: 220px;
-        width: 5px;
+        height: 210px;
+        width: 3px;
         transform: translate(50% 50%);
-        left: 265px;
-        top: 384px;
+        left: 350px;
+        top: 381px;
         animation-name: id1;
         animation-duration: 2s;
         }
@@ -72,11 +88,10 @@
         overflow: hidden;
         width: 44ch;
         animation: mark 0.9s infinite;
-        animation: write 2s steps(40, end);
+        animation: write 2s steps(40), mark 0.4s step-end infinite alternate;
         }
 
     nav {
-        background-color: rgba(71, 71, 71, 0.158); 
         color: rgb(59, 59, 59);
         height: 277px; 
         width: 15px;
@@ -86,7 +101,6 @@
         border-radius: 100px;
         margin-inline: -20px;
         backdrop-filter: blur(5px);
-        box-shadow: 0px 0px 13px #000e2494;
         left: 70px;
         top: 90px;
         position: absolute;
@@ -101,7 +115,7 @@
         }
 
     .down {
-        animation: scroll 0.7s ease-in alternate infinite;
+        animation: scrolldown 0.7s ease-in alternate infinite;
         }
         
     .container {
@@ -157,11 +171,25 @@
         height: 24px;
         width: 24px;
     }
+    .page2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 98.3vw;
+        height: 100vh;
+    }
+    .habilidades {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
     .fullskills {
         display: flex;
         justify-content: center;
         align-items: center;
+        animation: scroll 1s;
+        animation-timeline: scroll();
     }
 
     .skills1 {
@@ -188,6 +216,7 @@
         overflow: hidden;
         opacity: 0;
         transition: 0;
+        color: #cfceceda;
     }
 
     .skills1:hover {
@@ -232,6 +261,7 @@
         overflow: hidden;
         opacity: 0;
         transition: 0s;
+        color: #cfceceda;
     }
 
     .skills2:hover .texte2 {
@@ -280,6 +310,7 @@
         font-size: 15px;
         opacity: 0;
         transition: 0s;
+        color: #cfceceda;
     }
 
     .skills3:hover {
